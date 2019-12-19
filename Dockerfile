@@ -8,5 +8,6 @@ RUN pip install molecule
 
 ADD entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+RUN chmod 755 /entrypoint.sh
 
+ENTRYPOINT ["/entrypoint.sh"]
