@@ -1,0 +1,30 @@
+name: Molecule
+description: Run Molecule to test Ansible roles
+author: Robert de Bock <robert@meinit.nl>
+
+inputs:
+  namespace:
+    description: The Docker Hub namespace where the image is in.
+    required: false
+    default: robertdebock
+  image:
+    description: The image you want to run on.
+    required: false
+    default: fedora
+  tag:
+    description: The tag of the container image to use.
+    required: false
+    default: latest
+ 
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    NAMESPACE: ${{ inputs.namespace }}
+    IMAGE: ${{ inputs.image }}
+    TAG: ${{ inputs.tag }}
+
+branding:
+  icon: play  
+  color: green
+
