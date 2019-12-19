@@ -18,8 +18,10 @@ The tag of the container image to use. Default '"latest"'.
 
 ## Example usage
 
+```yaml
 uses: actions/molecule-action@1.0.0
 with:
   namespace: robertdebock
   image: fedora
   tag: latest
+```
