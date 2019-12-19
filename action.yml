@@ -1,4 +1,4 @@
-name: Molecule
+name: Molecule action
 description: Run Molecule to test Ansible roles
 author: Robert de Bock <robert@meinit.nl>
 
