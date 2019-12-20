@@ -1,7 +1,5 @@
 FROM alpine:3
 
-ENV ANSIBLE_ROLES_PATH ../
-
 WORKDIR /github/workspace
 
 RUN apk add --update --no-cache python py-pip && \
