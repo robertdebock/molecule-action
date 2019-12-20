@@ -18,10 +18,23 @@ The tag of the container image to use. Default '"latest"'.
 
 ## Example usage
 
+Here is a default configuration that tests your role on `namespace: robertdebock`, `image: fedora`, `tag: latest`.
+
 ```yaml
-uses: actions/molecule-action@1.0.0
-with:
-  namespace: robertdebock
-  image: fedora
-  tag: latest
+---
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          path: "${{ github.repository }}"
+      - name: molecule
+        uses: robertdebock/molecule-action@master
 ```
+
+NOTE: the `checkout` action needs to place the file in ${{ github.repository }} in order for Molecule to find your role.

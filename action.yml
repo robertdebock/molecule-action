@@ -18,7 +18,7 @@ inputs:
  
 runs:
   using: docker
-  image: Dockerfile
+  image: 'docker://robertdebock/github-action-molecule'
   env:
     namespace: ${{ inputs.namespace }}
     image: ${{ inputs.image }}
