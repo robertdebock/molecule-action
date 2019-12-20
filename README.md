@@ -37,7 +37,7 @@ jobs:
         uses: robertdebock/molecule-action@master
 ```
 
-NOTE: the `checkout` action needs to place the file in ${{ github.repository }} in order for Molecule to find your role.
+NOTE: the `checkout` action needs to place the file in `${{ github.repository }}` in order for Molecule to find your role.
 
 If you want to test your role against multiple distributions, you can use this pattern:
 
