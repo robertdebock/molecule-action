@@ -2,6 +2,34 @@
 
 A GitHub action to tests your [Ansible](https://www.ansible.com/) role using [Molecule](https://molecule.readthedocs.io/en/stable/).
 
+## Requirements
+
+This action expects the following (default Ansible role) structure:
+```
+.
+├── defaults
+│   └── main.yml
+├── handlers
+│   └── main.yml
+├── meta
+│   └── main.yml
+├── molecule
+│   └── default
+│       ├── molecule.yml
+│       ├── playbook.yml
+│       └── prepare.yml
+├── requirements.yml
+├── tasks
+│   └── main.yml
+├── tox.ini # OPTIONAL
+└── vars
+    └── main.yml
+```
+
+If you are missing the `molecule` directory, please have a look at this [skeleton role](https://github.com/robertdebock/ansible-role-skeleton) or one of the many examples listed on [my website](https://robertdebock.nl/).
+
+When `tox.ini` is found, [tox](https://tox.readthedocs.io/en/latest/) is used to test the role.
+
 ## Inputs
 
 ### `namespace`
