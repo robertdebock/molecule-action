@@ -6,4 +6,4 @@ RUN apk add --update --no-cache -virtual build_dependencies py-pip gcc python-de
   pip install 'molecule[docker]' && \
   apk del build_dependencies
 
-CMD molecule test
+CMD pwd ; echo ${GITHUB_WORKSPACE} ; echo ${GITHUB_REPOSITORY} ; find ./ ;  molecule test

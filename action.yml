@@ -20,9 +20,9 @@ runs:
   using: docker
   image: Dockerfile
   env:
-    NAMESPACE: ${{ inputs.namespace }}
-    IMAGE: ${{ inputs.image }}
-    TAG: ${{ inputs.tag }}
+    namespace: ${{ inputs.namespace }}
+    image: ${{ inputs.image }}
+    tag: ${{ inputs.tag }}
 
 branding:
   icon: play  
