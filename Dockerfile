@@ -6,4 +6,4 @@ RUN apk add --update --no-cache py-pip gcc python-dev musl-dev libffi-dev openss
 
 RUN pip install 'molecule[docker]'
 
-CMD molecule test
+CMD pwd ; echo ${GITHUB_WORKSPACE} ; echo ${GITHUB_REPOSITORY} ; find ./ ;  molecule test
