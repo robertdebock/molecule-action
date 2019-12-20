@@ -1,6 +1,6 @@
 # Molecule action
 
-This action tests an [Ansible](https://www.ansible.com/) role using [Molecule](https://molecule.readthedocs.io/en/stable/).
+A GitHub action to tests your [Ansible](https://www.ansible.com/) role using [Molecule](https://molecule.readthedocs.io/en/stable/).
 
 ## Inputs
 
