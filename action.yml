@@ -19,6 +19,9 @@ inputs:
 runs:
   using: docker
   image: 'docker://robertdebock/github-action-molecule'
+  args:
+    - cd ${GITHUB_REPOSITORY}
+    - test -f tox.ini && tox || molecule test
   env:
     namespace: ${{ inputs.namespace }}
     image: ${{ inputs.image }}
