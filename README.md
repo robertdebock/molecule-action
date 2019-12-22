@@ -44,6 +44,10 @@ The image you want to run on. Default '"fedora"'.
 
 The tag of the container image to use. Default '"latest"'.
 
+### `options`
+
+The options to pass to `tox`. For example `parallel`. Default '""'. (empty)
+
 ## Example usage
 
 Here is a default configuration that tests your role on `namespace: robertdebock`, `image: fedora`, `tag: latest`.
@@ -97,7 +101,8 @@ jobs:
       - name: molecule
         uses: robertdebock/molecule-action@master
         with:
-          image: ${{ matrix.image }}
+          image: "${{ matrix.image }}"
+          options: parallel
 ```
 
 You can also test different tags, this is a bit clunky; you basically define a full matrix and exclude many tags.
@@ -198,5 +203,6 @@ jobs:
       - name: molecule
         uses: robertdebock/molecule-action@master
         with:
-          image: ${{ matrix.image }}
+          image: "${{ matrix.image }}"
+          options: parallel
 ```

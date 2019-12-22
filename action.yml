@@ -15,6 +15,10 @@ inputs:
     description: The tag of the container image to use.
     required: false
     default: latest
+  options:
+    description: Options you can pass to tox, for example `parallel`.
+    required: false
+    default: ""
  
 runs:
   using: docker
