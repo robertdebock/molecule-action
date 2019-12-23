@@ -16,9 +16,8 @@ inputs:
     required: false
     default: latest
   options:
-    description: Options you can pass to tox, for example `parallel`.
+    description: Options you can pass to [`tox`](https://tox.readthedocs.io/en/latest/), for example `parallel`.
     required: false
-    default: ""
  
 runs:
   using: docker
@@ -27,6 +26,7 @@ runs:
     namespace: ${{ inputs.namespace }}
     image: ${{ inputs.image }}
     tag: ${{ inputs.tag }}
+    options: ${{ inputs.options }}
 
 branding:
   icon: play  
