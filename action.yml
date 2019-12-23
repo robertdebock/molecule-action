@@ -16,7 +16,7 @@ inputs:
     required: false
     default: latest
   options:
-    description: Options you can pass to [`tox`](https://tox.readthedocs.io/en/latest/), for example `parallel`.
+    description: Options you can pass to [`tox`](https://tox.readthedocs.io/en/latest/), for example `--parallel all`.
     required: false
  
 runs:
