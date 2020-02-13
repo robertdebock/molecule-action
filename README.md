@@ -4,6 +4,8 @@ A GitHub action to tests your [Ansible](https://www.ansible.com/) role using [Mo
 
 ## Requirements
 
+This action can work with Molecule scenarios that use the [`docker`](https://molecule.readthedocs.io/en/latest/configuration.html#docker) driver.
+
 This action expects the following (default Ansible role) structure:
 ```
 .
@@ -46,7 +48,7 @@ The tag of the container image to use. Default '"latest"'.
 
 ### `options`
 
-The options to pass to `tox`. For example `parallel`. Default '""'. (empty)
+The [options to pass to `tox`](https://tox.readthedocs.io/en/latest/config.html#tox). For example `parallel`. Default '""'. (empty)
 
 ## Example usage
 
