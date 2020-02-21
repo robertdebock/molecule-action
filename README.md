@@ -30,7 +30,7 @@ This action expects the following (default Ansible role) structure:
 
 If you are missing the `molecule` directory, please have a look at this [skeleton role](https://github.com/robertdebock/ansible-role-skeleton) or one of the many examples listed on [my website](https://robertdebock.nl/).
 
-When `tox.ini` is found, [tox](https://tox.readthedocs.io/en/latest/) is used to test the role.
+When `tox.ini` is found, [tox](https://tox.readthedocs.io/en/latest/) is used to test the role. Tox will install all dependecies found in `tox.ini` itself, meaning `tox.ini` determines the version of [molecule](https://molecule.readthedocs.io/en/latest/) that is used.
 
 ## Inputs
 
@@ -68,7 +68,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.0.1
+        uses: robertdebock/molecule-action@2.0.0
 ```
 
 NOTE: the `checkout` action needs to place the file in `${{ github.repository }}` in order for Molecule to find your role.
@@ -101,7 +101,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.0.1
+        uses: robertdebock/molecule-action@2.0.0
         with:
           image: "${{ matrix.image }}"
           options: parallel
