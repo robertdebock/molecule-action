@@ -52,7 +52,7 @@ The [options to pass to `tox`](https://tox.readthedocs.io/en/latest/config.html#
 
 ### `command`
 
-The molecule command to use. For example `lint``. Default `"test"`.
+The molecule command to use. For example `lint`. Default `"test"`.
 
 ## Example usage
 
