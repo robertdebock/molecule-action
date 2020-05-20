@@ -72,7 +72,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.3.2
+        uses: robertdebock/molecule-action@2.3.3
 ```
 
 NOTE: the `checkout` action needs to place the file in `${{ github.repository }}` in order for Molecule to find your role.
@@ -93,7 +93,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: molecule
-        uses: robertdebock/molecule-action@2.3.2
+        uses: robertdebock/molecule-action@2.3.3
         with:
           command: lint
   test:
@@ -116,7 +116,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.3.2
+        uses: robertdebock/molecule-action@2.3.3
         with:
           image: "${{ matrix.image }}"
           options: parallel
