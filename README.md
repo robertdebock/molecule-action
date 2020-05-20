@@ -52,7 +52,7 @@ The [options to pass to `tox`](https://tox.readthedocs.io/en/latest/config.html#
 
 ### `command`
 
-The molecule command to use. For example `lint` or `syntax`. Default `"test"`.
+The molecule command to use. For example `lint``. Default `"test"`.
 
 ## Example usage
 
@@ -72,7 +72,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.3.3
+        uses: robertdebock/molecule-action@2.3.4
 ```
 
 NOTE: the `checkout` action needs to place the file in `${{ github.repository }}` in order for Molecule to find your role.
@@ -92,8 +92,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+        with:
+          path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.3.3
+        uses: robertdebock/molecule-action@2.3.4
         with:
           command: lint
   test:
@@ -116,7 +118,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.3.3
+        uses: robertdebock/molecule-action@2.3.4
         with:
           image: "${{ matrix.image }}"
           options: parallel
