@@ -50,6 +50,10 @@ The tag of the container image to use. Default '"latest"'.
 
 The [options to pass to `tox`](https://tox.readthedocs.io/en/latest/config.html#tox). For example `parallel`. Default '""'. (empty)
 
+### `command`
+
+The molecule command to use. For example `lint` or `syntax`. Default `"test"`.
+
 ## Example usage
 
 Here is a default configuration that tests your role on `namespace: robertdebock`, `image: fedora`, `tag: latest`.
@@ -68,7 +72,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.2.0
+        uses: robertdebock/molecule-action@2.3.0
 ```
 
 NOTE: the `checkout` action needs to place the file in `${{ github.repository }}` in order for Molecule to find your role.
@@ -83,7 +87,18 @@ on:
   - push
 
 jobs:
-  build:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: molecule
+        uses: robertdebock/molecule-action@2.3.0
+        with:
+          command: lint
+  test:
+    needs:
+      - lint
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -101,7 +116,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.2.0
+        uses: robertdebock/molecule-action@2.3.0
         with:
           image: "${{ matrix.image }}"
           options: parallel

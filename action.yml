@@ -4,7 +4,7 @@ author: Robert de Bock <robert@meinit.nl>
 
 inputs:
   namespace:
-    description: The Docker Hub namespace where the image is in.
+    description: The [Docker Hub](https://hub.docker.com/) namespace where the image is in.
     required: false
     default: robertdebock
   image:
@@ -18,17 +18,21 @@ inputs:
   options:
     description: Options you can pass to [`tox`](https://tox.readthedocs.io/en/latest/), for example `--parallel all`.
     required: false
- 
+  command:
+    description: What command to pass to [molecule](https://molecule.readthedocs.io/en/latest/), for example: `lint` or `syntax`.
+    required: false
+    default: test
+
 runs:
   using: docker
-  image: 'docker://robertdebock/github-action-molecule:2.2.0'
+  image: 'docker://robertdebock/github-action-molecule:2.3.0'
   env:
     namespace: ${{ inputs.namespace }}
     image: ${{ inputs.image }}
     tag: ${{ inputs.tag }}
     options: ${{ inputs.options }}
+    command: ${{ inputs.command }}
 
 branding:
-  icon: play  
+  icon: play
   color: green
-
