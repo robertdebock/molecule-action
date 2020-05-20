@@ -36,19 +36,19 @@ When `tox.ini` is found, [tox](https://tox.readthedocs.io/en/latest/) is used to
 
 ### `namespace`
 
-The Docker Hub namespace where the image is in. Default '"robertdebock"'.
+The Docker Hub namespace where the image is in. Default `"robertdebock"`.
 
 ### `image`
 
-The image you want to run on. Default '"fedora"'.
+The image you want to run on. Default `"fedora"`.
 
 ### `tag`
 
-The tag of the container image to use. Default '"latest"'.
+The tag of the container image to use. Default `"latest"`.
 
 ### `options`
 
-The [options to pass to `tox`](https://tox.readthedocs.io/en/latest/config.html#tox). For example `parallel`. Default '""'. (empty)
+The [options to pass to `tox`](https://tox.readthedocs.io/en/latest/config.html#tox). For example `parallel`. Default `""`. (empty)
 
 ### `command`
 
