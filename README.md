@@ -54,6 +54,10 @@ The [options to pass to `tox`](https://tox.readthedocs.io/en/latest/config.html#
 
 The molecule command to use. For example `lint`. Default `"test"`.
 
+### `scenario`
+
+The molecule scenario to run. Default `"default"`
+
 ## Example usage
 
 Here is a default configuration that tests your role on `namespace: robertdebock`, `image: fedora`, `tag: latest`.
@@ -72,7 +76,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.5.1
+        uses: robertdebock/molecule-action@2.6.0
 ```
 
 NOTE: the `checkout` action needs to place the file in `${{ github.repository }}` in order for Molecule to find your role.
@@ -95,7 +99,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.5.1
+        uses: robertdebock/molecule-action@2.6.0
         with:
           command: lint
   test:
@@ -118,8 +122,9 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.5.1
+        uses: robertdebock/molecule-action@2.6.0
         with:
           image: "${{ matrix.image }}"
           options: parallel
+          scenario: my_specific_scenario
 ```

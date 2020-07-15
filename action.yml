@@ -22,10 +22,14 @@ inputs:
     description: What command to pass to [molecule](https://molecule.readthedocs.io/en/latest/), for example `lint` or `syntax`.
     required: false
     default: test
+  scenario:
+    description: The molecule scenario to run.
+    required: false
+    default: default
 
 runs:
   using: docker
-  image: 'docker://robertdebock/github-action-molecule:2.5.1'
+  image: 'docker://robertdebock/github-action-molecule:2.6.0'
   env:
     namespace: ${{ inputs.namespace }}
     image: ${{ inputs.image }}
