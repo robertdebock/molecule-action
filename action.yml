@@ -36,6 +36,7 @@ runs:
     tag: ${{ inputs.tag }}
     options: ${{ inputs.options }}
     command: ${{ inputs.command }}
+    scenario: ${{ inputs.scenario }}
 
 branding:
   icon: play
