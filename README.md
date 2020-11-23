@@ -69,14 +69,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-2004
     steps:
       - name: checkout
         uses: actions/checkout@v2
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.6.3
+        uses: robertdebock/molecule-action@2.6.4
 ```
 
 NOTE: the `checkout` action needs to place the file in `${{ github.repository }}` in order for Molecule to find your role.
@@ -92,7 +92,7 @@ on:
 
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-2004
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -105,7 +105,7 @@ jobs:
   test:
     needs:
       - lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-2004
     strategy:
       matrix:
         image:
@@ -122,7 +122,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: molecule
-        uses: robertdebock/molecule-action@2.6.3
+        uses: robertdebock/molecule-action@2.6.4
         with:
           image: "${{ matrix.image }}"
           options: parallel
