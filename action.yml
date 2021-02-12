@@ -30,7 +30,7 @@ inputs:
 
 runs:
   using: docker
-  image: 'docker://robertdebock/github-action-molecule:3.0.2'
+  image: 'docker://robertdebock/github-action-molecule:3.0.3'
   env:
     namespace: ${{ inputs.namespace }}
     image: ${{ inputs.image }}
