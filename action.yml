@@ -30,8 +30,9 @@ inputs:
 
 runs:
   using: docker
-  image: 'docker://robertdebock/github-action-molecule:3.0.5'
+  image: 'docker://robertdebock/github-action-molecule:3.0.6'
   env:
+    ANSIBLE_ROLES_PATH: "../"
     namespace: ${{ inputs.namespace }}
     image: ${{ inputs.image }}
     tag: ${{ inputs.tag }}
