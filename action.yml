@@ -1,10 +1,11 @@
+---
 name: Test Ansible roles with Molecule
 description: Run Molecule to test Ansible roles
 author: Robert de Bock <robert@meinit.nl>
 
 inputs:
   namespace:
-    description: The [Docker Hub](https://hub.docker.com/) namespace where the image is in.
+    description: The [Docker Hub](https://hub.docker.com/) namespace where the image can be found.
     required: false
     default: robertdebock
   image:
@@ -29,7 +30,7 @@ inputs:
 
 runs:
   using: docker
-  image: 'docker://robertdebock/github-action-molecule:2.6.7'
+  image: 'docker://robertdebock/github-action-molecule:3.0.0'
   env:
     namespace: ${{ inputs.namespace }}
     image: ${{ inputs.image }}
