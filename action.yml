@@ -5,32 +5,32 @@ author: Robert de Bock <robert@meinit.nl>
 
 inputs:
   namespace:
-    description: The [Docker Hub](https://hub.docker.com/) namespace where the image can be found.
+    description: The [Docker Hub](https://hub.docker.com/) namespace where the image can be found. Defaults to `robertdebock`.
     required: false
     default: robertdebock
   image:
-    description: The image you want to run on.
+    description: The image you want to run on. Defaults to `fedora`.
     required: false
     default: fedora
   tag:
-    description: The tag of the container image to use.
+    description: The tag of the container image to use. Defaults to `latest`.
     required: false
     default: latest
   options:
     description: Options you can pass to [`tox`](https://tox.readthedocs.io/en/latest/), for example `--parallel all`.
     required: false
   command:
-    description: What command to pass to [molecule](https://molecule.readthedocs.io/en/latest/), for example `lint` or `syntax`.
+    description: What command to pass to [molecule](https://molecule.readthedocs.io/en/latest/), for example `lint` or `syntax`. Defaults to `test`.
     required: false
     default: test
   scenario:
-    description: The molecule scenario to run.
+    description: The molecule scenario to run. Default to `default`.
     required: false
     default: default
 
 runs:
   using: docker
-  image: 'docker://robertdebock/github-action-molecule:3.0.6'
+  image: 'docker://robertdebock/github-action-molecule:3.0.7'
   env:
     ANSIBLE_ROLES_PATH: "../"
     namespace: ${{ inputs.namespace }}
