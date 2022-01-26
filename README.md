@@ -128,3 +128,17 @@ jobs:
           options: parallel
           scenario: my_specific_scenario
 ```
+
+## Debugging
+
+You can enable Molecule debugging by using this pattern:
+
+```yaml
+# Stuff omitted.
+      - name: molecule
+        uses: robertdebock/molecule-action@4.0.5
+        with:
+          image: ${{ matrix.config.image }}
+          tag: ${{ matrix.config.tag }}
+          command: "--debug test"
+```
