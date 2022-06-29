@@ -30,7 +30,7 @@ inputs:
 
 runs:
   using: docker
-  image: 'docker://robertdebock/github-action-molecule:4.0.7'
+  image: 'docker://robertdebock/github-action-molecule:4.0.8'
   env:
     ANSIBLE_ROLES_PATH: "../"
     ANSIBLE_ASYNC_DIR: "/tmp/.ansible_async"
