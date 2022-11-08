@@ -1,6 +1,7 @@
 ---
 name: Yaml Lint
-on:
+'on':
+  pull_request:
   push:
 jobs:
   yamllint:
