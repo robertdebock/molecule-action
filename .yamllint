@@ -1,4 +1,5 @@
 ---
   truthy:
     enable: true
-    allowed-values: ["true", "false", "on"]
+    allowed-values: ["true", "false"]
+    check-keys: false
