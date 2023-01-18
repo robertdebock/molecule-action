@@ -1,5 +1,5 @@
 ---
-name: Yaml Lint
+name: Yaml Lint example
 on:
   push:
 jobs:
