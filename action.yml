@@ -20,7 +20,7 @@ inputs:
     description: Options you can pass to [`tox`](https://tox.readthedocs.io/en/latest/), for example `--parallel all`.
     required: false
   command:
-    description: What command to pass to [molecule](https://molecule.readthedocs.io/en/latest/), for example `lint` or `syntax`. Defaults to `test`.
+    description: What command to pass to [molecule](https://molecule.readthedocs.io/en/latest/), for example `create` or `syntax`. Defaults to `test`.
     required: false
     default: test
   scenario:
